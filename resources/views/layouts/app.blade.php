@@ -29,6 +29,7 @@
 
             <!-- Page Content -->
             <main>
+                <div>this is App Layout rood file</div>
                 {{ $slot }}
             </main>
         </div>

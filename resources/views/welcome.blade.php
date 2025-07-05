@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
 
-    <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Figtree:wght@400;600&display=swap" rel="stylesheet" />
 
     <style>
@@ -66,4 +65,8 @@
     </div>
 </body>
 
-</html>
+</html> -->
+
+<x-guest-layout>
+    This is Guest Layout
+</x-guest-layout>
