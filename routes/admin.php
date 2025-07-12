@@ -35,13 +35,18 @@ Route::prefix('admin')->name('admin.')->middleware('guest:admin')->group(functio
 
 Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function () {
 
-
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
 
 
 
+    Route::resource('general-setting', \App\Http\Controllers\Admin\GeneralSettingController::class)->only('index', 'store');
+
+
+
+
+    // Admin Auth Routes
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])
         ->name('password.confirm');
 

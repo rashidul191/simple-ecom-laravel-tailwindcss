@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    @props(['title' => config('app.name', "Laravel")])
+    <title>{{ $title }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -24,13 +24,8 @@
 
 </head>
 
-<!-- <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100"> -->
 
-<body
-    class="bg-gray-100 text-gray-800">
-
-
+<body class="bg-gray-100 text-gray-800">
 
     @include('admin.layouts.navigation')
 
@@ -38,9 +33,13 @@
         <!-- Sidebar -->
         @include('admin.layouts.partial.sidebar')
 
-
         <!-- Main Content -->
         <main class="flex-1 p-6">
+            <div class="mb-4">
+                {{ $header ?? '' }}
+            </div>
+
+
             {{ $slot }}
 
         </main>
