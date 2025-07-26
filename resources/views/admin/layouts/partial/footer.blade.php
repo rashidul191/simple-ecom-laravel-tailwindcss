@@ -1,4 +1,3 @@
-<!-- Footer -->
-  <footer class="bg-white border-t text-center p-4">
-    &copy; 2025 Admin Panel. All rights reserved.
+  <footer class="text-center p-4 bg-white dark:bg-gray-800 text-sm">
+    &copy; 2025 Admin Dashboard. All rights reserved.
   </footer>

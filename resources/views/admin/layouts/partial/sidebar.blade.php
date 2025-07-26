@@ -1,64 +1,57 @@
- <!-- Left Sidebar Start -->
- <aside id="sidebar" class="fixed md:static top-16 left-0 h-[calc(100vh)] w-64 bg-white shadow-md overflow-y-auto scrollbar-hide z-20 transform -translate-x-full md:translate-x-0 transition-transform">
-   <nav class="p-4 space-y-2">
+<aside id="sidebar"
+  class="w-64 md:translate-x-0 -translate-x-full md:block bg-white dark:bg-gray-800 fixed top-0 left-0 h-full z-40 shadow-md transition-all duration-300">
+  <div class="p-6">
+    <div class="flex justify-between items-center mb-2">
+      <div></div>
+      <div>
+        <button class="md:hidden text-xl text-red-500" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="text-center">
+      <img src="" alt="logo">
+    </div>
+    <ul class="space-y-3">
+      <li>
+        <a href="{{ route('admin.dashboard.index') }}"
+          class="nav-link flex items-center gap-2 px-3 py-2 font-medium text-gray-700 dark:text-white"
+          data-tippy-content="Dashboard">
+          <i class="fas fa-chart-line"></i><span>Dashboard</span>
+        </a>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)"
+          class="dropdown-toggle nav-link flex items-center  gap-2 px-3 py-2 font-medium text-gray-700 dark:text-white">
+          <i class="fas fa-layer-group"></i>
+          <span>Menu</span>
+        </a>
+        <ul class="ml-6 mt-2 space-y-1 hidden">
+          <li><a href="#"
+              class="block px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Submenu 1</a></li>
+          <li><a href="#"
+              class="block px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Submenu 2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"
+          class="nav-link flex items-center gap-2 px-3 py-2 font-medium text-gray-700 dark:text-white"
+          data-tippy-content="Users">
+          <i class="fas fa-users"></i><span>Users List</span>
+        </a>
+      </li>
 
-     <x-nav-link
-       href="{{ route('admin.dashboard') }}"
-       class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }} w-full flex items-center text-2xl gap-3 p-3 rounded hover:bg-gray-100">
-       <i class="fas fa-tachometer-alt"></i> {{ __('Dashboard') }}
-     </x-nav-link>
+      <li class="dropdown">
+        <a href="javascript:void(0)"
+          class="dropdown-toggle nav-link flex items-center  gap-2 px-3 py-2 font-medium text-gray-700 dark:text-white">
+          <i class="fa-solid fa-gear"></i>
+          <span>Setting</span>
+        </a>
+        <ul class="ml-6 mt-2 space-y-1 hidden">
 
-     <div>
-       <button class="w-full flex items-center justify-between gap-3 p-3 rounded hover:bg-gray-100" onclick="toggleDropdown('userMenu')">
-         <span class="flex items-center gap-3"><i class="fas fa-users"></i> Users</span>
-         <i class="fas fa-chevron-down"></i>
-       </button>
-       <div id="userMenu" class="pl-6 hidden">
-         <a href="#" class="flex items-center gap-2 py-2 text-sm hover:text-blue-500"><i class="fas fa-user-friends"></i> All Users</a>
-         <a href="#" class="flex items-center gap-2 py-2 text-sm hover:text-blue-500"><i class="fas fa-user-plus"></i> Add User</a>
-       </div>
-     </div>
+          <li><a href="{{ route('admin.general-setting.index') }}"
+              class="block px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">General Setting</a></li>
 
-     <div>
-       <button class="w-full flex items-center justify-between gap-3 p-3 rounded hover:bg-gray-100" onclick="toggleDropdown('productMenu')">
-         <span class="flex items-center gap-3"><i class="fas fa-box"></i> Products</span>
-         <i class="fas fa-chevron-down"></i>
-       </button>
-       <div id="productMenu" class="pl-6 hidden">
-         <a href="#" class="flex items-center gap-2 py-2 text-sm hover:text-blue-500"><i class="fas fa-box-open"></i> All Products</a>
-         <a href="#" class="flex items-center gap-2 py-2 text-sm hover:text-blue-500"><i class="fas fa-plus-square"></i> Add Product</a>
-       </div>
-     </div>
-
-     <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-gray-100">
-       <i class="fas fa-shopping-cart"></i> Orders
-     </a>
-
-     <!-- Dropdown Component -->
-
-     <!-- Dropdown Component -->
-     <div x-data="{ open: false }">
-       <!-- Trigger Button -->
-       <button @click="open = !open" class="flex items-center gap-2 p-3 rounded hover:bg-gray-100 w-full">
-         <i class="fas fa-cogs"></i> {{ __('Settings') }}
-         <i class="fas fa-chevron-down ml-auto text-sm"></i>
-       </button>
-       <!-- Dropdown Items -->
-       <div x-show="open" @click.away="open = false" class="ml-3 w-56 bg-white border-l-4 rounded z-50">
-         <a href="{{ route('admin.general-setting.index') }}"
-           class=" {{ request()->routeIs('admin.dashboard') ? 'active' : '' }} flex items-center gap-3 px-4 py-2 hover:bg-gray-100">
-           <i class="fa-solid fa-arrow-right"></i> {{ __('General Setting') }}
-         </a>
-
-
-       </div>
-     </div>
-
-
-
-     <a href="#" class="flex items-center gap-3 p-3 rounded hover:bg-gray-100 text-red-600">
-       <i class="fas fa-sign-out-alt"></i> Logout
-     </a>
-   </nav>
- </aside>
- <!-- Left Sidebar End -->
+        </ul>
+      </li>
+    </ul>
+  </div>
+</aside>
