@@ -23,12 +23,10 @@ Route::prefix('admin')->name('admin.')->middleware('guest:admin')->group(functio
 
 Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function () {
 
-
     Route::resource('dashboard', \App\Http\Controllers\Admin\DashboardController::class)->only('index');
 
-
+    Route::resource('social-link', \App\Http\Controllers\Admin\SocialLinkController::class)->only('index', 'store');
     Route::resource('general-setting', \App\Http\Controllers\Admin\GeneralSettingController::class)->only('index', 'store');
-
 
     // Admin Auth Routes
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])

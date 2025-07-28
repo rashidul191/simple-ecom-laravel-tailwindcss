@@ -49,6 +49,8 @@
 
           <li><a href="{{ route('admin.general-setting.index') }}"
               class="block px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">General Setting</a></li>
+          <li><a href="{{ route('admin.social-link.index') }}"
+              class="block px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Social Link</a></li>
 
         </ul>
       </li>

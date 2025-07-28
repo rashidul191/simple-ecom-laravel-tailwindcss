@@ -10,8 +10,6 @@
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
     @foreach ($cards as $index => $item )
-
-
     <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
       <h3 class="text-2xl font-semibold mb-3">{{ $item->title }}</h3>
       <div class="flex items-center justify-between">
@@ -19,7 +17,6 @@
         <p class="text-2xl font-bold">{{ $item->value }}</p>
       </div>
     </div>
-
     @endforeach
 
 

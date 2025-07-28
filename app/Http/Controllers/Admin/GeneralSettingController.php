@@ -16,9 +16,7 @@ class GeneralSettingController extends Controller
     }
     public function store(Request $request)
     {
-
         $data = $request->except('_token');
-        // dd($request->all());
         foreach ($data as $key => $value) {
             if ($request->hasFile($key)) {
                 $value = Storage::url($request->file($key)->store('public/uploads'));
