@@ -11,6 +11,7 @@ class SocialLink extends Model
 
     protected $fillable = [
         'icon',
+        'color',
         'link'
     ];
 }
